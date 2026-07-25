@@ -1,6 +1,4 @@
 import numpy as np
-import pandas as pd
-
 
 dim = int(input("input vector dimension \n"))
 vector = np.empty(dim)
