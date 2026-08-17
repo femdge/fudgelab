@@ -1,0 +1,17 @@
+
+body {
+
+    color: black;
+    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+header {
+
+    height: 80px;
+    background-color: #0071BC;
+    border-bottom-style: solid; border-bottom-width: 2px;
+    text-align: center;
+
+}
