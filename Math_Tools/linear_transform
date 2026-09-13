@@ -1,0 +1,14 @@
+import numpy as np
+from matrix import Matrix as mx
+
+mat = mx(3)
+mat.rowAssign(mat.dim, mat.rows)
+mat.colAssign(mat.dim, mat.rows, mat.cols)
+
+print("rows \n")
+for i in mat.rows:
+    print(str(mat.rows[i]))
+
+print("cols \n")
+for i in mat.cols:
+    print(str(mat.cols[i])) 
