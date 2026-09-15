@@ -2,38 +2,49 @@ import numpy as np
 
 class Matrix:
 
-    dim = 1
-    rows = np.empty(dim)
-    cols = np.empty(dim)
+    dim = None
 
     def __init__(self, dim):
 
-        dim = self.dim
-        rows = np.empty(dim)
-        cols = np.empty(dim)
+        self.dim = dim
+        self.rows = np.eye(dim)
+        self.cols = np.eye(dim)
+        self.rowAssign()
+        self.colAssign()
 
-    def rowAssign(dim, rows):
 
-        row = np.empty(dim)
+    def rowAssign(self):
 
-        for j in range(dim):
+        row = np.arange(self.dim)
+
+        for j in range(self.dim):
 
             rraw = input("type vector numbers \n") #splits raw numbers to fit into vector
             rraw = rraw.split(" ")
-            for i in range(dim):
+            for i in range(self.dim):
                 row[i] = float(rraw[i])
 
-        rows[j] = row
+            self.rows[j] = row
 
-    def colAssign(dim, rows, cols):
+    def colAssign(self):
 
-        col = np.empty(dim)
+        col = np.arange(self.dim)
 
-        for j in range(dim):
+        for j in range(self.dim):
 
-            for i in range(dim):
-                col[i] = rows[i][j]
+            for i in range(self.dim):
+                col[i] = self.rows[i][j]
 
-            cols[j] = col
+            self.cols[j] = col
 
-    
+    def printRows(self):
+
+        print("rows:")
+        for i in range(self.dim):
+            print(str(self.rows[i]))
+
+    def printCols(self):
+
+        print("collumns:")
+        for i in range(self.dim):
+            print(str(self.cols[i])) 
